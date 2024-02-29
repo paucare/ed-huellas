@@ -13,6 +13,11 @@ public class PetDataRepository implements PetRepository {
     //De donde va a sacar los datos la capa de datos
     private ArrayList<Pet> localPets = new ArrayList<>();
 
+    //Constructor privado
+    private PetDataRepository() {
+        initData();
+    }
+
     //Metodos de la interfaz
 
     @Override
@@ -49,6 +54,11 @@ public class PetDataRepository implements PetRepository {
     public void updatePet(Pet pet) {
         deletePet(pet.getId());
         savePet(pet);
+    }
+
+    private void initData(){
+        localPets.add(new Pet("1", "Rami", "Gato blanco", "Hembra", "01-01-2023", "https://", "Pequeño", "Europeo"));
+        localPets.add(new Pet("1", "Rami", "Gato blanco", "Hembra", "01-01-2023", "https://", "Pequeño", "Europeo"));
     }
 
     //Patrón singleton

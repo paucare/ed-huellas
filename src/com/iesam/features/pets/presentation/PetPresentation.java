@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class PetPresentation {
 
-    public static void PrintPets() {
+    public static void printPets() {
         GetPetsUseCase getPetsUseCase = new GetPetsUseCase(PetDataRepository.newInstance());
         ArrayList<Pet> pets = getPetsUseCase.execute();
         //Imprimir cada una de las mascotas
